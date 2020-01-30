@@ -1,15 +1,34 @@
-# ExhibitorModule
+# Xamarin.Forms Starter Template
 
-This project was created using the Prism QuickStart Templates by Dan Siegel. Be sure
-to follow Dan on Twitter @DanJSiegel.
+This project is meant to be used as a template, accelerator, and for learning purposes. This solution is built with best practices for code design and release managment via Microsoft AppCenter.
 
-## Developer Notes
+### 1. Xamarin.Forms
+This solution is built with Xamarin.Forms
 
+### 2. Prism.Forms
+This solution uses Prism.Forms MVVM framework. Prism.Forms abstracts a lot of boiler-plate code to support MVVM. Prism.Forms also provides a set of services to handle Navigation, Dialogs, Dependency Injection, etc.
+
+### 3. API Service
+The API service for communicating with REST APIs. This service uses `HttpClient` and manages cookies, headers, message handlers, etc.
+
+### 4. Cache Service
+The Cache service provides caching mechanism for volatile (in-memory) and persistant (on device) data. This service can be injected into any class and used to store and read data from cache. The on device memory is stored on the device cache directory that can be backed up to the cloud, and simply cleared out by the OS.
+
+### 5. Network Service
+xxx
+
+### 6. AppCenter
+#### Analytics
+#### Release Management
+
+### 7. Push Notifications (Firebase)
+
+### 8. Build Tools
 This Project uses Mobile.BuildTools to inject sensitive variables at build time. 
 After cloning this repository you will need to make sure that you have taken some
 time to do some basic setup in your environment prior to building.
 
-### Application Secrets
+#### Application Secrets
 
 Every application contains sensitive information that should never be checked into
 source control. In order to handle this the Mobile.BuildTools looks for a file in
@@ -58,7 +77,7 @@ the PropertyGroup of your CSProj like:
 </Project>
 ```
 
-### Application Manifests
+#### Application Manifests
 
 The Mobile.BuildTools also helps with protecting Application Secrets that may be
 contained within Application Manifests like `AndroidManifest.xml` or `Info.plist`.
@@ -86,3 +105,6 @@ will only copy Manifests when building a Platform target such as iOS, Android, U
 If the build definition builds more than one platform target, any variables that 
 should be different from one platform to the next should use platform specific
 tokens within the manifest.
+
+# Disclaimer
+This solution is built by [Hussain Abbasi](http://www.hussainabbasi.com) ([@HussainNAbbasi](https://twitter.com/HussainNAbbasi)) using the Prism QuickStart Templates by Dan Siegel ([@DanSiegel](https://twitter.com/DanjSiegel)) and other best practices.
