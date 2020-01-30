@@ -2,28 +2,28 @@
 
 This project is meant to be used as a template, accelerator, and for learning purposes. This solution is built with best practices for code design and release managment via Microsoft AppCenter.
 
-### 1. Xamarin.Forms
+## 1. Xamarin.Forms
 This solution is built with Xamarin.Forms
 
-### 2. Prism.Forms
+## 2. Prism.Forms
 This solution uses Prism.Forms MVVM framework. Prism.Forms abstracts a lot of boiler-plate code to support MVVM. Prism.Forms also provides a set of services to handle Navigation, Dialogs, Dependency Injection, etc.
 
-### 3. API Service
+## 3. API Service
 The API service for communicating with REST APIs. This service uses `HttpClient` and manages cookies, headers, message handlers, etc.
 
-### 4. Cache Service
+## 4. Cache Service
 The Cache service provides caching mechanism for volatile (in-memory) and persistant (on device) data. This service can be injected into any class and used to store and read data from cache. The on device memory is stored on the device cache directory that can be backed up to the cloud, and simply cleared out by the OS.
 
-### 5. Network Service
+## 5. Network Service
 xxx
 
-### 6. AppCenter
-#### Analytics
-#### Release Management
+## 6. AppCenter
+### Analytics
+### Release Management
 
-### 7. Push Notifications (Firebase)
+## 7. Push Notifications (Firebase)
 
-### 8. Build Tools
+## 8. Build Tools
 This Project uses Mobile.BuildTools to inject sensitive variables at build time. 
 After cloning this repository you will need to make sure that you have taken some
 time to do some basic setup in your environment prior to building.
