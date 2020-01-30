@@ -8,13 +8,10 @@
     <DebugType></DebugType>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="System.Xml.XDocument" Version="4.3.0" />
-    <PackageReference Include="Prism.Core" Version="7.1.0.431" />
-    <PackageReference Include="CClarke.Plugin.Calendars" Version="1.0.0" />
-    <PackageReference Include="Fody" Version="4.1.0" />
-    <PackageReference Include="PropertyChanged.Fody" Version="2.6.0" />
-    <PackageReference Include="sqlite-net-pcl" Version="1.6.258-beta" />
+    <PackageReference Include="Prism.Core" Version="7.2.0.1422" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Event.cs" />

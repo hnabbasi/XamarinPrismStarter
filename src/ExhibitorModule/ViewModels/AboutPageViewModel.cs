@@ -1,23 +1,23 @@
 ﻿using System;
 using ExhibitorModule.Common;
 using ExhibitorModule.Helpers;
+using ExhibitorModule.Services.Abstractions;
 using ExhibitorModule.Views;
-using Plugin.DeviceInfo.Abstractions;
 using Prism.Commands;
 
 namespace ExhibitorModule.ViewModels
 {
     public class AboutPageViewModel : ViewModelBase
     {
-        private readonly IDeviceInfo _deviceInfo;
+        private readonly IEssentialsService _essentialsService;
 
-        public AboutPageViewModel(IBase @base, IDeviceInfo deviceInfo)
+        public AboutPageViewModel(IBase @base, IEssentialsService essentialsService)
             : base(@base)
         {
             Title = Strings.Resources.AboutPageTitle;
 
             InitializeCommand();
-            _deviceInfo = deviceInfo;
+            _essentialsService = essentialsService;
         }
 
         private void InitializeCommand()
@@ -45,6 +45,6 @@ namespace ExhibitorModule.ViewModels
         public DelegateCommand GoToWebsiteCommand { get; private set; }
         public DelegateCommand CreditsCommand { get; private set; }
         public DelegateCommand ViewMapCommand { get; private set; }
-        public string AppVersion => $"Version {_deviceInfo.AppVersion}"; 
+        public string AppVersion => $"Version {_essentialsService.AppVersion}"; 
     }
 }

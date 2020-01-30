@@ -9,7 +9,6 @@ using Acr.UserDialogs;
 using Unity;
 using Prism.Unity;
 using ExhibitorModule.Helpers;
-using FFImageLoading.Helpers;
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
@@ -18,10 +17,8 @@ using Prism.Logging;
 using Xamarin.Forms;
 using DebugLogger = ExhibitorModule.Services.DebugLogger;
 using ExhibitorModule.Services.Abstractions;
-using Plugin.DeviceInfo;
-using Plugin.DeviceInfo.Abstractions;
-using Plugin.Calendars;
-using Plugin.Calendars.Abstractions;
+//using Plugin.DeviceInfo;
+//using Plugin.DeviceInfo.Abstractions;
 using Plugin.Permissions.Abstractions;
 using Plugin.Permissions;
 using ExhibitorModule.Common;
@@ -59,10 +56,10 @@ namespace ExhibitorModule
             fb.OnNotificationReceived += OnPushNotificationReceived;
             fb.OnTokenRefresh += OnTokenRefreshed;
             fb.OnNotificationOpened += Handle_OnNotificationOpened;
-
+            
             // NOTE: Make sure to build MyApp project to generate Secrets.cs in obj folder.
             // Handle when your app starts
-            var appId = Container.Resolve<IDeviceInfo>().Platform == Plugin.DeviceInfo.Abstractions.Platform.Android ?
+            var appId = Container.Resolve<IEssentialsService>().DevicePlatform == DevicePlatform.Android ?
                 $"android={Secrets.AppCenter_Android_Secret};" :
                 $"ios={Secrets.AppCenter_iOS_Secret};";
 
@@ -92,8 +89,6 @@ namespace ExhibitorModule
 
             containerRegistry.RegisterInstance(CreateLogger());
             containerRegistry.RegisterInstance<IUserDialogs>(UserDialogs.Instance);
-            containerRegistry.RegisterInstance<IDeviceInfo>(CrossDeviceInfo.Current);
-            containerRegistry.RegisterInstance<ICalendars>(CrossCalendars.Current);
             containerRegistry.RegisterInstance<IPermissions>(CrossPermissions.Current);
             containerRegistry.RegisterInstance<IFirebasePushNotification>(CrossFirebasePushNotification.Current);
 
@@ -122,7 +117,7 @@ namespace ExhibitorModule
             if (await Analytics.IsEnabledAsync())
             {
                 System.Diagnostics.Debug.WriteLine("Analytics is enabled");
-                FFImageLoading.ImageService.Instance.Config.Logger = (IMiniLogger)Container.Resolve<ILoggerFacade>();
+                //FFImageLoading.ImageService.Instance.Config.Logger = (IMiniLogger)Container.Resolve<ILoggerFacade>();
             }
             else
             {
@@ -149,7 +144,7 @@ namespace ExhibitorModule
         private MCAnalyticsLogger CreateAppCenterLogger()
         {
             var logger = new MCAnalyticsLogger();
-            FFImageLoading.ImageService.Instance.Config.Logger = (IMiniLogger)logger;
+            //FFImageLoading.ImageService.Instance.Config.Logger = (IMiniLogger)logger;
             return logger;
         }
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 
 namespace ExhibitorModule.Services.Abstractions
 {
@@ -11,6 +12,7 @@ namespace ExhibitorModule.Services.Abstractions
         object GetPreference(string key, object value = null);
         void SavePreference(string key, object value = null);
         bool IsNetworkAvailable();
-        string DevicePlatform { get; }
+        DevicePlatform DevicePlatform { get; }
+        string AppVersion { get; }
     }
 }

@@ -33,11 +33,6 @@ namespace ExhibitorModule.Droid
             global::Xamarin.Forms.Forms.SetFlags("FastRenderers_Experimental");
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             global::Xamarin.Forms.FormsMaterial.Init(this, savedInstanceState);
-            global::FFImageLoading.Forms.Platform.CachedImageRenderer.Init(enableFastRenderer: true);
-            global::FFImageLoading.ImageService.Instance.Initialize(new FFImageLoading.Config.Configuration()
-            {
-                Logger = new Services.DebugLogger()
-            });
             global::Acr.UserDialogs.UserDialogs.Init(this);
             CrossCurrentActivity.Current.Init(this, savedInstanceState);
             LoadApplication(new App(new AndroidInitializer()));

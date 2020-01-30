@@ -7,7 +7,8 @@ namespace ExhibitorModule.Services
 {
     public class EssentialsService : IEssentialsService
     {
-        public string DevicePlatform => DeviceInfo.Platform.ToString();
+        public DevicePlatform DevicePlatform => DeviceInfo.Platform;
+        public string AppVersion => VersionTracking.CurrentVersion;
 
         public object GetPreference(string key, object value)
         {

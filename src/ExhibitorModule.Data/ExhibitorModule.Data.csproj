@@ -18,7 +18,7 @@
     <Folder Include="Abstractions\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="sqlite-net-pcl" Version="1.6.258-beta" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ExhibitorModule.Models\ExhibitorModule.Models.csproj" />
